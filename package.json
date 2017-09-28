@@ -10,7 +10,7 @@
     "lib"
   ],
   "scripts": {
-    "start": "node examples/server.js",
+    "start": "node src/server.js",
     "lint": "eslint src",
     "clean": "rm -rf ./lib",
     "babel": "babel src -d lib --copy-files",

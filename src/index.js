@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, hashHistory, IndexRoute} from 'react-router';
-import App from './App';
-import BoxModel from './content/BoxModel';
-import Flex from './content/Flex';
+import App from './components/App';
+import BoxModel from './components/content/BoxModel';
+import Flex from './components/content/Flex';
 
 ReactDOM.render(
   <Router history={hashHistory}>

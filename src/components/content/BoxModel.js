@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class BoxModel extends Component {
+const BoxModel = () => (
+  <div>
+    BoxModel
+  </div>
+);
 
-  render() {
-    return (
-      <div>
-        BoxModel
-      </div>
-    );
-  }
-}
+export default BoxModel;

@@ -1,15 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Flex extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Flex = () => (
+  <div>
+    Flex
+  </div>
+);
 
-  render() {
-    return (
-      <div>
-        Flex
-      </div>
-    );
-  }
-}
+export default Flex;

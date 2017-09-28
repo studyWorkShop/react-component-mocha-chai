@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import Header from './Header';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
       <div>
-        Test
+        <div>
+          <Header/>
+        </div>
+
+        <div>
+          {this.props.children}
+        </div>
       </div>
     );
   }

@@ -17,7 +17,7 @@
     "babel:watch": "watch 'npm run babel' ./src",
     "build": "npm run clean && NODE_ENV=production npm run babel",
     "test:unit": "mocha --compilers js:babel-register test/SpecHelper.js test/js/*-spec.js",
-    "test": "npm run lint && npm run test:unit",
+    "test": "npm run test:unit",
     "test:watch": "watch 'npm run test' ./src ./test",
     "git-release": "/bin/bash ./ci/git-release.sh",
     "npm-release": "/bin/bash ./ci/npm-release.sh",

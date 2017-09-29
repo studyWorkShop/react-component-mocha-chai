@@ -10,21 +10,23 @@
     "lib"
   ],
   "scripts": {
-    "start": "node examples/server.js",
+    "start": "node src/server.js",
     "lint": "eslint src",
     "clean": "rm -rf ./lib",
     "babel": "babel src -d lib --copy-files",
     "babel:watch": "watch 'npm run babel' ./src",
     "build": "npm run clean && NODE_ENV=production npm run babel",
     "test:unit": "mocha --compilers js:babel-register test/SpecHelper.js test/js/*-spec.js",
-    "test": "npm run lint && npm run test:unit",
+    "test": "npm run test:unit",
     "test:watch": "watch 'npm run test' ./src ./test",
-    "prepare": "npm install && npm prune && npm run build",
     "git-release": "/bin/bash ./ci/git-release.sh",
     "npm-release": "/bin/bash ./ci/npm-release.sh",
     "release": "npm run git-release && npm run npm-release"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  },
   "peerDependencies": {
     "react": "^15.2.1",
     "react-dom": "^15.2.1"

@@ -1,13 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const include = [ path.resolve(__dirname, '../src/'), path.resolve(__dirname, '../examples/') ];
+const include = [ path.resolve(__dirname, '../src/') ];
 
 module.exports = {
   devtool: 'source-maps',
   entry: [
-    './examples/scss/default.scss',
-    './examples/js/index'
+    './src/styles/default.scss',
+    './src/components/index'
   ],
   output: {
     path: path.resolve(__dirname, '../dist'),

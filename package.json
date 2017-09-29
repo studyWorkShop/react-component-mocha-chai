@@ -23,7 +23,10 @@
     "npm-release": "/bin/bash ./ci/npm-release.sh",
     "release": "npm run git-release && npm run npm-release"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  },
   "peerDependencies": {
     "react": "^15.2.1",
     "react-dom": "^15.2.1"
@@ -53,7 +56,6 @@
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^2.8.1",
     "sass-loader": "^4.0.2",
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0",

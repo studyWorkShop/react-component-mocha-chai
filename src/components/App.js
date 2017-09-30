@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default class App extends React.Component {
 
@@ -10,18 +10,14 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className='nav' onClick={this.props.onChange}>
-        <Link to="/box-model">
-          <button>
-            盒模型
-          </button>
-        </Link>
-        <Link to="/flex">
-          <button>
-            Flex
-          </button>
-        </Link>
-      </div>
+      <ul className='nav' onClick={this.props.onChange}>
+        <li>
+          <Link to="/box-model" className='nav-item'>盒模型</Link>
+        </li>
+        <li>
+          <Link to="/flex" className='nav-item'>Flex</Link>
+        </li>
+      </ul>
     );
   }
 }

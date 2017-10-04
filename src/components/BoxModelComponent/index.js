@@ -1,18 +1,25 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Basic from './Basic';
+import Display from './Display';
+import BoxSizing from './BoxSizing';
 
-const boxModel = [
+const boxModels = [
   {
     name: '盒模型',
-    route: 'basic'
+    path: 'basic',
+    exact: true,
+    main: () => <Basic/>
   },
   {
     name: 'Display',
-    route: 'display'
+    path: 'display',
+    main: () => <Display/>
   },
   {
     name: 'Box-sizing',
-    route: 'box-sizing'
+    path: 'box-sizing',
+    main: () => <BoxSizing/>
   }
 ];
 
@@ -23,18 +30,29 @@ class BoxModel extends React.Component {
 
   render() {
     return (
-      <ul>
-        {
-          boxModel.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link to={`${this.props.match.url}/${item.route}`}>{item.name}</Link>
-              </li>
-            );
-          })
-        }
-      </ul>
-    );
+      <Router>
+        <div>
+          <div>
+            <ul>
+              {boxModels.map((item, index) => (
+                <li key={index}>
+                  <Link to={`${this.props.match.url}/${item.path}`}>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            {
+              boxModels.map((item, index) => (
+                <Route key={index} path={`${this.props.match.url}/${item.path}`} component={item.main}/>
+              ))
+            }
+          </div>
+        </div>
+      </Router>
+    )
   }
 }
 

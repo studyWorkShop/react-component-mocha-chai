@@ -1,11 +1,11 @@
 import React from 'react';
 import {expect} from 'chai';
 import sinon from 'sinon';
-import { shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 
 import App from '../../src/components/App';
 
-describe('Bar components', () => {
+describe('App components', () => {
 
   it('nav children length should be 2', () => {
     const appComponent = shallow(<App/>);

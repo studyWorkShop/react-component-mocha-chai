@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Basic from './Basic';
 import Display from './Display';
 import BoxSizing from './BoxSizing';
+import '../../styles/BoxModel.scss';
 
 const boxModels = [
   {
@@ -31,12 +32,12 @@ class BoxModel extends React.Component {
   render() {
     return (
       <Router>
-        <div>
-          <div>
+        <div className='side-bar'>
+          <div className='side-bar-list'>
             <ul>
               {boxModels.map((item, index) => (
                 <li key={index}>
-                  <Link to={`${this.props.match.url}/${item.path}`}>
+                  <Link to={`${this.props.match.url}/${item.path}`} className='list-item'>
                     {item.name}
                   </Link>
                 </li>

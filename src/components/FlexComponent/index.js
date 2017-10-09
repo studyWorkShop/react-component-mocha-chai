@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import FlexBasic from './FlexBasic';
+import Flex1 from './Flex1';
 import '../../styles/sideBar.scss';
 
 const flexItems = [
@@ -12,7 +13,7 @@ const flexItems = [
   {
     name: 'Flex1',
     path: 'flex1',
-    main: () => <div>flex1</div>
+    main: () => <Flex1/>
   },
   {
     name: 'Flex2',

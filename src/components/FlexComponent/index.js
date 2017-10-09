@@ -1,19 +1,56 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import '../../styles/sideBar.scss';
 
-const flexItems = ['Flex1', 'Flex2', 'Flex3'];
+const flexItems = [
+  {
+    name: 'Flex1',
+    path: 'flex1',
+    main: () => <div>flex1</div>
+  },
+  {
+    name: 'Flex2',
+    path: 'flex2',
+    main: () => <div>flex2</div>
+  },
+  {
+    name: 'Flex3',
+    path: 'flex3',
+    main: () => <div>flex3</div>
+  }
+];
 
 class Flex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <ul>
-        {
-          flexItems.map((item, index) => {
-            return (
-              <li key={index}>{item}</li>
-            );
-          })
-        }
-      </ul>
+      <Router>
+        <div className='side-bar'>
+          <div className='side-bar-list'>
+            <ul>
+              {
+                flexItems.map((item, index) => (
+                  <li key={index}>
+                    <Link to={`${this.props.match.url}/${item.path}`} className='list-item'>
+                      {item.name}
+                    </Link>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div>
+            {
+              flexItems.map((item, index) => (
+                <Route key={index} path={`${this.props.match.url}/${item.path}`} component={item.main}/>
+              ))
+            }
+          </div>
+        </div>
+      </Router>
     )
   }
 }

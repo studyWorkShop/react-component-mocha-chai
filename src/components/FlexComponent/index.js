@@ -20,11 +20,6 @@ const flexItems = [
     name: 'Flex2',
     path: 'flex2',
     main: () => <Flex2/>
-  },
-  {
-    name: 'Flex3',
-    path: 'flex3',
-    main: () => <div>flex3</div>
   }
 ];
 

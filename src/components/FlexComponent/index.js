@@ -1,8 +1,14 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import FlexBasic from './FlexBasic';
 import '../../styles/sideBar.scss';
 
 const flexItems = [
+  {
+    name: 'Flex Basic',
+    path: 'flex-basic',
+    main: () => <FlexBasic/>
+  },
   {
     name: 'Flex1',
     path: 'flex1',

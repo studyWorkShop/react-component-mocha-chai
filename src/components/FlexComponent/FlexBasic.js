@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Flex.scss';
+import '../../styles/FlexBasic.scss';
 
 class FlexBasic extends React.Component {
   render() {

@@ -1,14 +1,6 @@
+@import 'common.scss';
+
 .flex2 {
-  margin: 0 30px;
-  width: 500px;
-  height: 300px;
-  border: 1px solid #000;
   display: flex;
   justify-content: space-around;
-
-  .case-box {
-    width: 140px;
-    height: 80px;
-    background-color: #e77f24;
-  }
 }

@@ -25,37 +25,29 @@ const boxModels = [
   }
 ];
 
-class BoxModel extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <Router>
-        <div className='side-bar'>
-          <div className='side-bar-list'>
-            <ul>
-              {boxModels.map((item, index) => (
-                <li key={index}>
-                  <Link to={`${this.props.match.url}/${item.path}`} className='list-item'>
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            {
-              boxModels.map((item, index) => (
-                <Route key={index} path={`${this.props.match.url}/${item.path}`} component={item.main}/>
-              ))
-            }
-          </div>
-        </div>
-      </Router>
-    )
-  }
-}
+const BoxModel = ({ match }) => (
+  <Router>
+    <div className='side-bar'>
+      <div className='side-bar-list'>
+        <ul>
+          {boxModels.map((item, index) => (
+            <li key={index}>
+              <Link to={`${match.url}/${item.path}`} className='list-item'>
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        {
+          boxModels.map((item, index) => (
+            <Route key={index} path={`${match.url}/${item.path}`} component={item.main}/>
+          ))
+        }
+      </div>
+    </div>
+  </Router>
+);
 
 export default BoxModel;

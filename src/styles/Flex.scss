@@ -1,0 +1,58 @@
+.flex-basic {
+  padding: 0 30px;
+  width: 1060px;
+  display: flex;
+
+  .flex-box {
+    width: 140px;
+    height: 80px;
+    line-height: 70px;
+    text-align: center;
+    background-color: #e77f24;
+    border: 1px solid #fff;
+  }
+
+  .container {
+    flex: 1;
+
+    .border {
+      border: 1px solid #000;
+    }
+
+    .flex-direction {
+      display: flex;
+      flex-direction: row; //row | row-reverse | column | column-reverse
+    }
+
+    .flex-wrap {
+      display: flex;
+      flex-wrap: wrap-reverse; //wrap | nowrap | wrap-reverse
+    }
+
+    .flex-flow {
+      display: flex;
+      flex-flow: row-reverse wrap-reverse; // <flex-wrap flex-direction> 随机
+    }
+
+    .justify-content {
+      display: flex;
+      justify-content: space-evenly;
+      //center | flex-start | flex-end | space-between | space-around | space-evenly
+    }
+
+    .align-items {
+      display: flex;
+      height: 200px;
+      align-items: baseline;
+      //flex-start | flex-end | center | stretch | baseline
+    }
+
+    .align-content {
+      display: flex;
+      height: 300px;
+      flex-wrap: wrap;
+      align-content: space-around;
+      //flex-start | flex-end | center | stretch | space-between | space-around
+    }
+  }
+}

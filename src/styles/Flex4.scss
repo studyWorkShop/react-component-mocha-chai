@@ -1,0 +1,16 @@
+@import 'common.scss';
+
+.flex4 {
+  display: flex;
+  justify-content: space-between;
+
+  .case-box {
+    border: 2px solid #fff;
+    margin: 10px;
+    flex: 1;
+  }
+
+  .special {
+    flex: 2;
+  }
+}

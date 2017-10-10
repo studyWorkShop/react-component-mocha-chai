@@ -1,0 +1,23 @@
+.side-bar {
+  display: flex;
+
+  &-list {
+    padding: 10px;
+    width: 210px;
+    background: #f0f0f0;
+
+    ul {
+      list-style: none;
+      font-size: 20px;
+
+      .list-item {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-page {
+    flex: 1;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,8 @@
+@import 'common.scss';
+
+.flex3 {
+  display: flex;
+  width: 140px;
+  flex-wrap: wrap;
+  align-content: space-between;
+}

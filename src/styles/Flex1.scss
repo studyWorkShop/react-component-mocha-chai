@@ -1,0 +1,14 @@
+@import 'common.scss';
+
+.flex1 {
+  display: flex;
+  justify-content: space-between;
+
+  .middle {
+    align-self: center;
+  }
+
+  .right {
+    align-self: flex-end;
+  }
+}

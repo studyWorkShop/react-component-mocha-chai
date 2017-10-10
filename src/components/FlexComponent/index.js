@@ -39,7 +39,7 @@ const Flex = ({ match }) => (
           }
         </ul>
       </div>
-      <div>
+      <div className='side-bar-page'>
         {
           flexItems.map((item, index) => (
             <Route key={index} path={`${match.url}/${item.path}`} component={item.main}/>

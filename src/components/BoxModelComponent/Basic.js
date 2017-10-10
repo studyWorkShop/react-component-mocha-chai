@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/BoxModel.scss';
 
 const Basic = () => (
   <div id='box-basic'>

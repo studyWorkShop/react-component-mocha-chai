@@ -24,5 +24,11 @@ describe('App component', () => {
       const href = node.querySelector('a').getAttribute('href');
       expect(href).to.be.equal('/box-model');
     });
+
+    it('App Link href by mount', () => {
+      const wrapper = mount(<App/>);
+      const href = wrapper.find('a').first();
+      expect(href).to.have.attr('href','/box-model');
+    });
   });
 });

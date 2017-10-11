@@ -26,8 +26,7 @@ const App = () => (
           ))
         }
       </ul>
-      <Route exact path="/" component={BoxModel}/>
-      <Route path="/box-model" component={BoxModel}/>
+      <Route exact path="/box-model" component={BoxModel}/>
       <Route path="/flex" component={Flex}/>
     </div>
   </BrowserRouter>

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/FlexBasic.scss';
 
 const FlexBasic = () => (
   <div className='flex-basic'>

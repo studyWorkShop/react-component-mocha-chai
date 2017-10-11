@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/Display.scss';
 
 const Display = () => (
   <div className='display'>

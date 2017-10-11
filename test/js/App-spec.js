@@ -1,27 +1,34 @@
 import React from 'react';
+import {render} from 'react-dom';
 import {expect} from 'chai';
-import sinon from 'sinon';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
+import {MemoryRouter} from 'react-router';
 
 import App from '../../src/components/App';
 
-describe('App components', () => {
+describe('App component', () => {
+  describe('App Link', () => {
+    it('App Link children should be 2', () => {
+      const wrapper = mount(<App/>);
+      expect(wrapper.find('ul').children()).to.have.length(2);
+    });
 
-  it('nav children length should be 2', () => {
-    const appComponent = shallow(<App/>);
-    const children = appComponent.find('Link').children();
-    expect(children).to.have.lengthOf(2);
-  });
+    it('App Link href', () => {
+      const node = document.createElement('div');
+      render((
+        <MemoryRouter>
+          <App/>
+        </MemoryRouter>
+      ), node);
 
-  it('nav onchange should invoke once', () => {
-    let onChange = sinon.spy();
-    const appComponent = shallow(<App onChange={onChange}/>);
-    appComponent.find('.nav').simulate('click');
-    expect(onChange.callCount).to.equal(1);
-  });
+      const href = node.querySelector('a').getAttribute('href');
+      expect(href).to.be.equal('/box-model');
+    });
 
-  it('name should be right', () => {
-    const appComponent = shallow(<App name="app"/>);
-    expect(appComponent.state('name')).to.equal('app');
+    it('App Link href by mount', () => {
+      const wrapper = mount(<App/>);
+      const href = wrapper.find('a').first();
+      expect(href).to.have.attr('href','/box-model');
+    });
   });
 });

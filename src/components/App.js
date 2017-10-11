@@ -1,23 +1,35 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
+import BoxModel from './BoxModelComponent';
+import Flex from './FlexComponent';
 
-export default class App extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {name: props.name};
+const menu = [
+  {
+    name: '盒模型',
+    path: '/box-model'
+  },
+  {
+    name: 'Flex',
+    path: '/flex'
   }
+];
 
-  render() {
-    return (
-      <ul className='nav' onClick={this.props.onChange}>
-        <li>
-          <Link to="/box-model" className='nav-item'>盒模型</Link>
-        </li>
-        <li>
-          <Link to="/flex" className='nav-item'>Flex</Link>
-        </li>
+const App = () => (
+  <BrowserRouter>
+    <div>
+      <ul className='nav'>
+        {
+          menu.map((item, index) => (
+            <li key={index}>
+              <Link to={item.path} className='nav-item'>{item.name}</Link>
+            </li>
+          ))
+        }
       </ul>
-    );
-  }
-}
+      <Route exact path="/box-model" component={BoxModel}/>
+      <Route path="/flex" component={Flex}/>
+    </div>
+  </BrowserRouter>
+);
+
+export default App;

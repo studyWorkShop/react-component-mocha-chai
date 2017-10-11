@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/Flex1.scss';
 
 const Flex1 = () => (
   <div className='flex-container flex1'>

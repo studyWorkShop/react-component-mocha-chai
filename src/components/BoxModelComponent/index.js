@@ -3,8 +3,6 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Basic from './Basic';
 import Display from './Display';
 import BoxSizing from './BoxSizing';
-import '../../styles/BoxModel.scss';
-import '../../styles/sideBar.scss';
 
 const boxModels = [
   {
